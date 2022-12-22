@@ -5,7 +5,14 @@ module.exports = {
       "./**/static/*.js"
   ],
   theme: {
-    extend: {},
+    extend: {
+        colors: {
+            "dark_mode":"#131414",
+        },
+        fontFamily: {
+            kanit: ['Kanit', "sans-serif"],
+        }
+    },
   },
   plugins: [],
 }
