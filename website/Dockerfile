@@ -34,9 +34,9 @@ RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-r
     && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
     && apt-get clean
 
-RUN npm install npm@8.18.0 -g && \
+RUN npm install npm@8.19.2 -g && \
     npm install n -g && \
-    n 18.8.0
+    n 19.3.0
 
 
 # Install the application server.
@@ -58,6 +58,7 @@ RUN chown wagtail:wagtail /app
 COPY --chown=wagtail:wagtail . .
 
 RUN npm install
+
 RUN npm run build
 # Use user "wagtail" to run the build commands below and the server itself.
 USER wagtail
