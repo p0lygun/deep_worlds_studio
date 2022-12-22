@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Debian 10 "buster" as a parent image.
-FROM python:3.8.1-slim-buster
+FROM python:3.11-slim-buster
 
 # Add user that will be used in the container.
 RUN useradd wagtail
@@ -12,17 +12,32 @@ EXPOSE 8000
 # 2. Set PORT variable that is used by Gunicorn. This should match "EXPOSE"
 #    command.
 ENV PYTHONUNBUFFERED=1 \
-    PORT=8000
+    PORT=8000 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PATH="${PATH}:/home/wagtail/.local/bin" \
+    USER="wagtail"
 
 # Install system packages required by Wagtail and Django.
 RUN apt-get update --yes --quiet && apt-get install --yes --quiet --no-install-recommends \
     build-essential \
+    curl \
     libpq-dev \
     libmariadbclient-dev \
     libjpeg62-turbo-dev \
     zlib1g-dev \
     libwebp-dev \
- && rm -rf /var/lib/apt/lists/*
+    software-properties-common \
+    zip \
+    unzip \
+    git \
+    npm \
+    && rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/man \
+    && apt-get clean
+
+RUN npm install npm@8.18.0 -g && \
+    npm install n -g && \
+    n 18.8.0
+
 
 # Install the application server.
 RUN pip install "gunicorn==20.0.4"
@@ -45,9 +60,11 @@ COPY --chown=wagtail:wagtail . .
 # Use user "wagtail" to run the build commands below and the server itself.
 USER wagtail
 
-# Collect static files.
-RUN python manage.py collectstatic --noinput --clear
+RUN npm install && npm install -D tailwindcss && npm run build
 
+
+# Collect static files.
+RUN python manage.py collectstatic --noinput --clear -i css/src/*
 # Runtime command that executes when "docker run" is called, it does the
 # following:
 #   1. Migrate the database.
