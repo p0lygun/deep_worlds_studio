@@ -2,7 +2,8 @@
 module.exports = {
   content: [
       "./**/templates/*.html",
-      "./**/static/*.js"
+      "./**/templates/**/*.html",
+      "./**/static/*.js",
   ],
   theme: {
     extend: {
@@ -11,6 +12,9 @@ module.exports = {
         },
         fontFamily: {
             kanit: ['Kanit', "sans-serif"],
+        },
+        backgroundImage: {
+            'home-banner': "url('/static/images/home_banner_bg.png')"
         }
     },
   },

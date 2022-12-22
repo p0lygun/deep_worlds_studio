@@ -4,5 +4,13 @@
 {% block body_class %}homepage{% endblock %}
 
 {% block content %}
-Test
+    <div class="home_banner_container relative">
+        <img src="{% static "images/home_banner_bg.png" %}" class="w-fit object-contain">
+        <div class="flex flex-col px-16 inset-y-center select-none">
+            <span class="font-bold text-[200px] uppercase leading-[86%]">Black</span>
+            <span class="font-bold text-[200px] uppercase leading-[86%]" >Light</span>
+            <span class="text-2xl font-medium">// WISHLIST NOW ON STEAM</span>
+        </div>
+    </div>
+
 {% endblock content %}

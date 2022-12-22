@@ -24,7 +24,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    "home",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -45,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "livereload",
     "django.contrib.staticfiles",
+    "home",
 
 ]
 

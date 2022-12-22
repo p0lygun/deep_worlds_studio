@@ -4,3 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+.inset-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.inset-y-center{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
