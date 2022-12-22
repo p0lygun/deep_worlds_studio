@@ -22,7 +22,7 @@
         {% endif %}
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/website.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/output.css' %}">
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -30,7 +30,6 @@
     </head>
 
     <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
 
         {% block content %}{% endblock %}
 
