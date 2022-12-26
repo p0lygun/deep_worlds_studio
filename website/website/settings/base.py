@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
+    "wagtail.contrib.routable_page",
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
     "wagtail.embeds",
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     "livereload",
     "django.contrib.staticfiles",
     "home",
+    "widget_tweaks",
 
 ]
 
@@ -171,3 +173,4 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"  # todo: update with domain name
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'
