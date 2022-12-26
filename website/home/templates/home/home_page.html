@@ -65,49 +65,43 @@
             <div id="twitch-embed"></div>
         </div>
         <!-- sign up -->
-        <div class="flex flex-col gap-y-14 w-1/3 mx-auto">
-            <a id="playtest" class="font-bold text-2xl text-center">SIGN UP FOR ANY UPCOMING PLAYTEST</a>
+        <form action="" method="post" class="flex flex-col gap-y-4 w-1/3 mx-auto">
+            {% csrf_token %}
+            <a id="playtest" class="font-bold text-2xl text-center mb-14">SIGN UP FOR ANY UPCOMING PLAYTEST</a>
 
             <div class="flex flex-row gap-x-36 items-center">
                  <span class="max-w-[246px]">
                      Keep in touch with us and be notified of our next playtests!
                  </span>
-                <form action="" method="post" class="flex flex-col gap-y-2">
-                    {% csrf_token %}
-                    <label for="id_email">
-                        {% render_field playtest_form.email class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3" type="email" placeholder="Email" %}
-                    </label>
-                    <input type="submit" value="Submit" class="self-end py-2 px-8 bg-[#071D31] text-white">
-                </form>
+                <label for="id_email">
+                    {% render_field playtest_form.email class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3" type="email" placeholder="Email" %}
+                </label>
             </div>
-        </div>
+            <input type="submit" value="Submit" class="self-end py-2 px-8 bg-[#071D31] text-white">
+        </form>
         <!-- press -->
-        <div class="flex flex-col gap-y-14 w-1/3 mx-auto">
-            <a id="press" class="font-bold text-2xl text-center">PRESS & INFLUENCERS</a>
-
+        <form action="" method="post" class="flex flex-col gap-y-4 w-1/3 mx-auto">
+            {% csrf_token %}
+            <a id="press" class="font-bold text-2xl text-center mb-14">PRESS & INFLUENCERS</a>
             <div class="flex flex-row gap-x-36 items-center">
                     <span class="">
                        Contact us to get more infos, or to be part of our partner program!
                     </span>
-                <label for="press-email">
-                    <input id="press-email" type="email" placeholder="Email"
-                           class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3">
+                <label for="press_email">
+                    {% render_field press_form.email class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3" type="email" placeholder="Email" id="press_email"%}
                 </label>
             </div>
 
             <div class="flex flex-col w-full gap-x-8">
-                <label for="press-subject">
-                    <input id="press-subject" type="text" placeholder="Subject"
-                           class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full mb-2.5">
+                <label for="id_subject">
+                    {% render_field press_form.subject class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full mb-2.5" placeholder="Subject" %}
                 </label>
                 <label for="press-message">
-                    <textarea id="press-message"
-                              placeholder="Message"
-                              class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full h-40 resize"
-                    > </textarea>
+                    {% render_field press_form.message class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full h-40 resize" placeholder="Message.." %}
                 </label>
             </div>
-        </div>
+            <input type="submit" value="Submit" class="self-end py-2 px-8 bg-[#071D31] text-white">
+        </form>
     </div>
 
 

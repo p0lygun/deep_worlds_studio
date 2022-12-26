@@ -6,10 +6,11 @@ from django.template.response import TemplateResponse
 from django.http import HttpRequest
 
 
+
 class HomePage(RoutablePageMixin, Page):
     @route('^$')
     def base(self, request: HttpRequest):
-        if request.method == "POST":
+        if request.method == "POST":   # pass request to view if it's a post request
             from .views import handel_playtest_request
             handel_playtest_request(request)
         return TemplateResponse(
@@ -19,9 +20,10 @@ class HomePage(RoutablePageMixin, Page):
         )
 
     def get_context(self, request, *args, **kwargs):
-        from .forms import PlaytestEmailSignUpForm
+        from .forms import PlaytestEmailSignUpForm, PressMessageForm
         context = super(HomePage, self).get_context(request, *args, **kwargs)
         context['playtest_form'] = PlaytestEmailSignUpForm()
+        context['press_form'] = PressMessageForm()
         return context
 
 
