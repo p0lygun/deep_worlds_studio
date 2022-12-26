@@ -20,8 +20,8 @@ def handel_playtest_request(request: HttpRequest):
                 smtp.starttls(context=ssl.create_default_context())
                 smtp.login(os.getenv('DEFAULT_FROM_EMAIL'), os.getenv('EMAIL_PASSWORD'))
                 msg = EmailMessage()
-                msg.set_content(press_form.cleaned_data['message'])
-                msg["Subject"] = press_form.cleaned_data["subject"]
+                msg.set_content(f"Message from {press_form.cleaned_data['email']}\n" + press_form.cleaned_data['message'])
+                msg["Subject"] = press_form.cleaned_data["subject"] + f' | {press_form.cleaned_data["email"]}'
                 msg["From"] = os.getenv('DEFAULT_FROM_EMAIL')
-                msg["To"] = press_form.cleaned_data['email']
+                msg["To"] = os.getenv('DEFAULT_TO_EMAIL')
                 smtp.send_message(msg)
