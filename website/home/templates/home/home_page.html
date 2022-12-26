@@ -6,7 +6,7 @@
 {% block content %}
     <div class="home_banner_container relative">
         <img src="{% static "images/home_banner_bg.png" %}" class="w-fit object-contain" alt="home banner">
-        <div class="flex flex-col px-16 inset-y-center">
+        <div class="flex flex-col px-16 inset-y-center text-white">
             <span class="font-bold text-[200px] uppercase leading-[86%]">Black</span>
             <span class="font-bold text-[200px] uppercase leading-[86%]">Light</span>
             <a class="text-2xl font-medium hover:underline underline-offset-8 decoration-pink-600 decoration-2"
@@ -74,7 +74,7 @@
                      Keep in touch with us and be notified of our next playtests!
                  </span>
                 <label for="id_email">
-                    {% render_field playtest_form.email class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3" type="email" placeholder="Email" %}
+                    {% render_field playtest_form.email class="bg-transparent border-2 focus:outline-none  border-black dark:border-white py-2 px-3" type="email" placeholder="Email" %}
                 </label>
             </div>
             <input type="submit" value="Submit" class="self-end py-2 px-8 bg-[#071D31] text-white">
@@ -88,16 +88,16 @@
                        Contact us to get more infos, or to be part of our partner program!
                     </span>
                 <label for="press_email">
-                    {% render_field press_form.email class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3" type="email" placeholder="Email" id="press_email"%}
+                    {% render_field press_form.email class="bg-transparent border-2 focus:outline-none border-black dark:border-white py-2 px-3" type="email" placeholder="Email" id="press_email"%}
                 </label>
             </div>
 
             <div class="flex flex-col w-full gap-x-8">
                 <label for="id_subject">
-                    {% render_field press_form.subject class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full mb-2.5" placeholder="Subject" %}
+                    {% render_field press_form.subject class="bg-transparent border-2 focus:outline-none border-black dark:border-white py-2 px-3 w-full mb-2.5" placeholder="Subject" %}
                 </label>
                 <label for="press-message">
-                    {% render_field press_form.message class="bg-transparent border-2 focus:outline-none dark:border-white py-2 px-3 w-full h-40 resize" placeholder="Message.." %}
+                    {% render_field press_form.message class="bg-transparent border-2 focus:outline-none border-black dark:border-white py-2 px-3 w-full h-40 resize" placeholder="Message.." %}
                 </label>
             </div>
             <input type="submit" value="Submit" class="self-end py-2 px-8 bg-[#071D31] text-white">
