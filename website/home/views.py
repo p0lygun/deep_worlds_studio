@@ -16,6 +16,7 @@ def handel_playtest_request(request: HttpRequest):
             playtest_form.save(commit=True)
         if press_form.is_valid():
             with smtplib.SMTP(os.getenv('EMAIL_HOST'), int(os.getenv('EMAIL_PORT'))) as smtp:
+                # todo: do this in a separate thread
                 smtp.starttls(context=ssl.create_default_context())
                 smtp.login(os.getenv('DEFAULT_FROM_EMAIL'), os.getenv('EMAIL_PASSWORD'))
                 msg = EmailMessage()
