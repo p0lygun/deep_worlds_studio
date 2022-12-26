@@ -31,4 +31,5 @@ tornado==6.2
 urllib3==1.26.13
 wagtail==4.1.1
 webencodings==0.5.1
+whitenoise==6.2.0
 Willow==1.4.1
