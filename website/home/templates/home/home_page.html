@@ -6,9 +6,12 @@
 {% block content %}
     <div class="home_banner_container relative">
         <img src="{% static "images/home_banner_bg.png" %}" class="w-fit object-contain" alt="home banner">
-        <a class="text-2xl font-medium hover:underline underline-offset-8 decoration-white decoration-2 text-white absolute bottom-0 left-0 py-2 px-3"
-           href="https://store.steampowered.com/app/1313230/Beautiful_Light/" target="_blank">// WISHLIST NOW ON
-            STEAM ></a>
+        <div class="w-full h-full flex flex-row absolute top-0 items-center justify-center sm:items-end sm:justify-start font-medium text-white sm:text-2xl">
+            <a class="hover:underline underline-offset-8 decoration-white decoration-2 sm:pl-4 sm:pb-4"
+               href="https://store.steampowered.com/app/1313230/Beautiful_Light/" target="_blank">
+            <span>// WISHLIST NOW ON
+                STEAM ></span></a>
+        </div>
     </div>
 
     <div id="content" class="my-11 flex flex-col gap-y-24 font-light">
