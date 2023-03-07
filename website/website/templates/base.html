@@ -29,7 +29,7 @@
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %} font-kanit dark:text-white dark:bg-dark_mode relative flex flex-col select-none">
+    <body class="{% block body_class %}{% endblock %} font-kanit dark:text-white dark:bg-dark_mode relative flex flex-col select-none transition duration-500 ease-in-out">
 
         {% include "navbar.html" %}
         {% block content %}{% endblock %}

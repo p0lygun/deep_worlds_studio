@@ -1,14 +1,17 @@
 {% load static %}
 <div id="navbar" class="bg-white dark:bg-dark_mode sticky top-0 z-10">
-    <div class="flex flex-row px-16 py-4 gap-x-8 items-center">
+    <div class="flex flex-row px-16 py-4 gap-x-8 items-center align-middle">
         <div class="logo">
-            <span class="font-bold uppercase text-2xl mr-8">
-
-                <a href="/">Deep Worlds</a>
+            <span class="font-bold uppercase text-2xl">
+                <a href="/">
+                    <!-- light mode -->
+                    <img class="dark:hidden" src="{% static 'images/svgs/logo_light.svg' %}" alt="Deep Worlds">
+                    <img class="hidden dark:block" src="{% static 'images/svgs/logo_dark.svg' %}" alt="Deep Worlds">
+                </a>
             </span>
         </div>
         <div class="hidden lg:flex font-medium flex-row grow">
-            <div class="flex flex-row gap-x-8 grow">
+            <div class="flex flex-row gap-x-8 grow justify-center">
                 <span>
                      <a href="#">Our Game</a>
                 </span>
