@@ -26,7 +26,7 @@
                                                             </span>
         </div>
         <!-- our values -->
-        <div class="flex flex-col gap-y-14 w-1/3 w-full">
+        <div class="flex flex-col gap-y-14 w-full">
             <a id="values" class="font-bold text-2xl text-center">Our Values</a>
             <div class="flex flex-row gap-x-10 w-full justify-center">
                 <div class="flex flex-col basis-60 shrink-0 gap-y-2">
@@ -59,9 +59,9 @@
             </div>
         </div>
         <!-- watch us -->
-        <div class="flex flex-col gap-y-14 w-1/3 w-full items-center">
+        <div class="flex flex-col gap-y-14 w-full px-8 items-center">
             <a id="twitch" class="font-bold text-2xl text-center">WATCH US LIVE CREATING OUR GAME</a>
-            <div id="twitch-embed"></div>
+            <div id="twitch-embed" class="w-full lg:w-[1042px]"></div>
         </div>
         <!-- sign up -->
         <form action="" method="post" class="flex flex-col gap-y-4 px-8 w-full mx-auto items-center">
@@ -115,7 +115,7 @@
     <script src="{% static "js/v1.js" %}"></script>
     <script type="text/javascript">
         new Twitch.Embed("twitch-embed", {
-            width: 1042,
+            width: '100%',
             height: 435,
             channel: "deepworldsstudio",
         });
