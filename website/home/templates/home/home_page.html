@@ -64,21 +64,21 @@
             <div id="twitch-embed"></div>
         </div>
         <!-- sign up -->
-        <form action="" method="post" class="flex flex-col gap-y-4 w-full mx-auto items-center">
+        <form action="" method="post" class="flex flex-col gap-y-4 px-8 w-full mx-auto items-center">
             {% csrf_token %}
             <a id="playtest" class="font-bold text-2xl text-center mb-14">SIGN UP FOR ANY UPCOMING PLAYTEST</a>
 
             <div class="flex flex-col gap-y-4 items-center">
                 <div class="flex flex-row items-center gap-y-4 gap-x-40 flex-wrap justify-center">
-                     <span class="w-[246px]">
-                         Keep in touch with us and be<br>notified of our next playtests!
+                     <span class="sm:w-[246px]">
+                         Keep in touch with us and be<br class="hidden sm:block">notified of our next playtests!
                      </span>
-                    <label for="id_email">
-                        {% render_field playtest_form.email class="bg-transparent border-2 focus:outline-none  border-black dark:border-white py-2 px-3" type="email" placeholder="Email" %}
+                    <label for="id_email" class="w-full sm:max-w-fit">
+                        {% render_field playtest_form.email class="bg-transparent w-full border-2 focus:outline-none  border-black dark:border-white py-2 px-3" type="email" placeholder="Email" %}
                     </label>
                 </div>
                 <input type="submit" value="Submit"
-                       class="sm:self-end max-w-fit py-2 px-8 bg-[#071D31] dark:text-black dark:bg-white text-white cursor-pointer">
+                       class="w-full sm:max-w-fit sm:self-end py-2 px-8 bg-[#071D31] dark:text-black dark:bg-white text-white cursor-pointer">
             </div>
         </form>
         <!-- press -->
@@ -104,7 +104,7 @@
                     </label>
                 </div>
                 <input type="submit" value="Submit"
-                       class="sm:self-end py-2 px-8 bg-[#071D31]  text-white dark:text-black dark:bg-white cursor-pointer">
+                       class="w-full sm:max-w-fit sm:self-end py-2 px-8 bg-[#071D31]  text-white dark:text-black dark:bg-white cursor-pointer">
             </div>
         </form>
     </div>
