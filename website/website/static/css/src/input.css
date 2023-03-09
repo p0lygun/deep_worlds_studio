@@ -15,3 +15,9 @@
   top: 50%;
   transform: translateY(-50%);
 }
+.cell-section{
+  width: 100%;
+}
+.flickity-button {
+  background-color: transparent;
+}

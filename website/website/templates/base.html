@@ -22,11 +22,13 @@
         {% endif %}
 
         {# Global stylesheets #}
+        <link rel="stylesheet" media="screen" type="text/css" href="{% static 'css/dist/flickity.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/dist/output.css' %}">
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
         {% endblock %}
+
     </head>
 
     <body class="{% block body_class %}{% endblock %} font-kanit dark:text-white dark:bg-dark_mode relative flex flex-col select-none transition duration-500 ease-in-out">
@@ -36,7 +38,7 @@
 
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/website.js' %}"></script>
-
+        <script type="text/javascript" src="{% static 'js/flickity.pkgd.min.js' %}"></script>
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
