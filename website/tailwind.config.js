@@ -10,6 +10,7 @@ module.exports = {
     extend: {
         colors: {
             "dark_mode":"#131414",
+            "light_mode": "#071D31"
         },
         fontFamily: {
             kanit: ['Kanit', "sans-serif"],

@@ -11,7 +11,7 @@
             </span>
         </div>
         <div class="hidden lg:flex font-medium flex-row grow">
-            <div class="flex flex-row gap-x-8 grow justify-center">
+            <div class="flex flex-row gap-x-8 grow justify-center [&>*]:text-light_mode [&>*]:dark:text-white">
                 <a href="#">Our Game</a>
                 <div onclick=smoothScroll("#who") class="cursor-pointer">Who we are</div>
                 <div onclick=smoothScroll("#values") class="cursor-pointer">Our Values</div>
@@ -20,17 +20,17 @@
             </div>
             <div class="flex-row flex gap-x-2 items-center">
                 <a href="https://twitter.com/DeepWorlds_SA" target="_blank"
-                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/twitter.svg" %}"></a>
+                   class="dark:brightness-0 dark:invert"><img src="{% static "images/svgs/twitter.svg" %}"></a>
                 <a href="https://www.twitch.tv/deepworldsstudio" target="_blank"
-                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/twitch.svg" %}"></a>
+                   class="dark:brightness-0 dark:invert"><img src="{% static "images/svgs/twitch.svg" %}"></a>
                 <a href="https://www.youtube.com/@deepworlds" target="_blank"
-                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/yt.svg" %}"></a>
+                   class="dark:brightness-0 dark:invert"><img src="{% static "images/svgs/youtube.svg" %}"></a>
             </div>
         </div>
     </div>
     <button id="theme-toggle" type="button" class="hidden lg:block text-gray-500 focus:outline-none focus:ring-0 text-sm">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 brightness-0 transition-[display] duration-200 "
-                 fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5"
+                 fill="#071D31" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
             <svg id="theme-toggle-light-icon"
