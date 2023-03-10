@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="home_banner_container relative">
-        <img src="{% static "images/home_banner_bg.png" %}" class="w-fit object-contain" alt="home banner">
+        <img src="{% static "images/home_banner_bg.png" %}" class="w-full object-contain" alt="home banner">
         <div class="w-full h-full flex flex-row absolute top-0 items-center justify-center sm:items-end sm:justify-start font-medium text-white sm:text-2xl">
             <a class="hover:underline underline-offset-8 decoration-white decoration-2 sm:pl-4 sm:pb-4"
                href="https://store.steampowered.com/app/1313230/Beautiful_Light/" target="_blank">
@@ -121,8 +121,17 @@
                         {% render_field playtest_form.email class="bg-transparent w-full border-2 focus:outline-none  border-black dark:border-white py-2 px-3" type="email" placeholder="Email" %}
                     </label>
                 </div>
+
+                <label class="hidden sm:block">
+                    <input type="checkbox" class="accent-[#071D31] border-0 rounded-l" style="width: 1rem" >
+                    <span class="text-xs">I authorize this website to store the<br>information provided in this form.</span>
+                </label>
                 <input type="submit" value="Submit"
                        class="w-full sm:max-w-fit sm:self-end py-2 px-8 bg-[#071D31] dark:text-black dark:bg-white text-white cursor-pointer">
+                <label class="flex flex-row gap-x-2 justify-center sm:hidden">
+                    <input type="checkbox" class="accent-[#071D31] border-0 rounded-l" style="width: 1rem" >
+                    <span class="text-xs">I authorize this website to store the<br>information provided in this form.</span>
+                </label>
             </div>
         </form>
         <!-- press -->
