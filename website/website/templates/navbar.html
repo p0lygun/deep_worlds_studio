@@ -12,26 +12,19 @@
         </div>
         <div class="hidden lg:flex font-medium flex-row grow">
             <div class="flex flex-row gap-x-8 grow justify-center">
-                <span>
-                     <a href="#">Our Game</a>
-                </span>
-                 <span>
-                     <a href="#who">Who we are</a>
-                </span>
-                 <span>
-                     <a href="#values">Our Values</a>
-                </span>
-                 <span>
-                   <a href="#playtest">Playtest</a>
-                </span>
-                 <span>
-                   <a href="#press">Press & Influencers</a>
-                </span>
+                <a href="#">Our Game</a>
+                <div onclick=smoothScroll("#who") class="cursor-pointer">Who we are</div>
+                <div onclick=smoothScroll("#values") class="cursor-pointer">Our Values</div>
+                <div onclick=smoothScroll("#playtest") class="cursor-pointer">Playtest</div>
+                <div onclick=smoothScroll("#press") class="cursor-pointer">Press & Influencers</div>
             </div>
             <div class="flex-row flex gap-x-2">
-                <a href="https://twitter.com/DeepWorlds_SA" target="_blank" class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/twitter.svg" %}"></a>
-                <a href="https://www.twitch.tv/deepworldsstudio" target="_blank" class="brightness-0 dark:brightness-100" ><img src="{% static "images/svgs/twitch.svg" %}"></a>
-                <a href="https://www.youtube.com/@deepworlds" target="_blank" class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/yt.svg" %}"></a>
+                <a href="https://twitter.com/DeepWorlds_SA" target="_blank"
+                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/twitter.svg" %}"></a>
+                <a href="https://www.twitch.tv/deepworldsstudio" target="_blank"
+                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/twitch.svg" %}"></a>
+                <a href="https://www.youtube.com/@deepworlds" target="_blank"
+                   class="brightness-0 dark:brightness-100"><img src="{% static "images/svgs/yt.svg" %}"></a>
             </div>
         </div>
 
