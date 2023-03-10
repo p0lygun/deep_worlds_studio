@@ -30,16 +30,29 @@
     {% endblock %}
     <script>
         // On page load or when changing themes, best to add inline in `head` to avoid FOUC
-        if (localStorage.getItem('color-theme') === 'dark' ) {
-            document.documentElement.classList.add('dark');
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                localStorage.setItem('color-theme', 'dark')
+                document.documentElement.classList.add('dark');
+            } else {
+                localStorage.setItem('color-theme', 'light')
+                document.documentElement.classList.remove('dark')
+            }
+
         } else {
-            document.documentElement.classList.remove('dark')
+            if (localStorage.getItem('color-theme') === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+
         }
     </script>
 
 </head>
 
 <body class="
+
 
         {% block body_class %}{% endblock %} font-kanit dark:text-white dark:bg-dark_mode relative flex flex-col select-none transition duration-500 ease-in-out">
 
