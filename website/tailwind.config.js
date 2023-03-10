@@ -15,6 +15,9 @@ module.exports = {
         },
         backgroundImage: {
             'home-banner': "url('/static/images/home_banner_bg.png')"
+        },
+        gridTemplateColumns: {
+            'values-section': 'repeat(auto-fit, minmax(245px, max-content))'
         }
     },
   },
